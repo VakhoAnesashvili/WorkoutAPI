@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import WorkoutListCreateAPIView, WorkoutDetailAPIView
+from .views import WorkoutListCreateView, WorkoutRetrieveUpdateDestroyView
 
 urlpatterns = [
-    path('workouts/', WorkoutListCreateAPIView.as_view(), name='workout-list-create'),
-    path('workouts/<int:pk>/', WorkoutDetailAPIView.as_view(), name='workout-detail'),
+    path('workouts/', WorkoutListCreateView.as_view(), name='workout-list-create'),
+    path('workouts/<int:pk>/', WorkoutRetrieveUpdateDestroyView.as_view(), name='workout-detail-update-delete'),
 ]
